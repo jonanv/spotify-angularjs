@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://i.imgur.com/bF1WkFW.png" width="300">
+</p>
+
 # SpotifyAngularjs
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
