@@ -8,8 +8,8 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private spotifyService: SpotifyService) {
-    this.spotifyService.getNewReleases();
+  constructor(public spotifyService: SpotifyService) {
+
   }
 
   ngOnInit() {
