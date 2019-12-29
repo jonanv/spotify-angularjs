@@ -10,6 +10,7 @@ import { Item } from '../../interfaces/album.interface';
 export class SearchComponent implements OnInit {
 
   itemsArtist: Item[] = [];
+  loading: boolean;
 
   constructor(public spotifyService: SpotifyService) { }
 
@@ -18,10 +19,13 @@ export class SearchComponent implements OnInit {
 
   search(termino: string) {
     const terminoLower = termino.toLowerCase();
+    this.loading = true;
+    // TODO: solucionar bug para cuando se elimina texto de la busqueda
+
     this.spotifyService.getArtist(terminoLower)
       .subscribe((response: Item[]) => {
         this.itemsArtist = response;
-        console.log(this.itemsArtist);
+        this.loading = false;
       });
   }
 }
