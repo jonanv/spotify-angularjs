@@ -91,6 +91,14 @@ or
 ng generate service services/heroes --spec=false
 ```
 
+# Create pipe without spec.ts
+```javascript
+ng g p pipes/noimage --spec=false
+```
+```javascript
+ng generate pipe pipes/noimage --spec=false
+```
+
 # Create project build to production
 ```javascript
 ng build --prod
