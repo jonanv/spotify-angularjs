@@ -13,26 +13,25 @@ export class SpotifyService {
     this.getNewReleases();
   }
 
-  private getHeaders() {
+  getQuery(query: string) {
+    const url = `https://api.spotify.com/v1/${ query }`;
+
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQDVjEHQtilwMSGIu2nxuUUv-Zk8rxNUOLQCc1je-IgCNism_p42_A6ZKOow4neFaoOcF8Lpsh70x1tkga0'
+      'Authorization': 'Bearer BQCDO1tP9C_V2LtO9PlDxiaHyHBd732fg9JcQ6GtClXWp3RG7mb0ZKlyvxmhMOAemnFLxCSRmJ7Pg3ghQRA'
     });
-    return headers;
+
+    return this.http.get(url, { headers });
   }
 
   getNewReleases() {
-    const headers = this.getHeaders();
-
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases?country=CO&limit=20', { headers })
+    return this.getQuery('browse/new-releases?country=CO&limit=20')
       .pipe(map(response => {
         return response['albums'].items;
       }));
   }
 
   getArtist(termino: string) {
-    const headers = this.getHeaders();
-
-    return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist`, { headers })
+    return this.getQuery(`search?q=${ termino }&type=artist`)
       .pipe(map(response => {
         return response['artists'].items;
       }));
