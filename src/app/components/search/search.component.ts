@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
     this.loading = true;
     // TODO: solucionar bug para cuando se elimina texto de la busqueda
 
-    this.spotifyService.getArtist(terminoLower)
+    this.spotifyService.getArtists(terminoLower)
       .subscribe((response: Item[]) => {
         this.itemsArtist = response;
         this.loading = false;
