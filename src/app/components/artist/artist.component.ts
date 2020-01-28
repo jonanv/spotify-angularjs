@@ -34,7 +34,7 @@ export class ArtistComponent implements OnInit {
       .subscribe((response: any) => {
         this.artist = response;
         this.loading = false;
-        console.log(response);
+        // console.log(response);
       });
   }
 
@@ -45,7 +45,7 @@ export class ArtistComponent implements OnInit {
       .subscribe((response: any) => {
         this.topTracks = response;
         this.loading = false;
-        console.log(response);
+        // console.log(response);
       });
   }
 }

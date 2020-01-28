@@ -8,6 +8,7 @@
 [![License][license-badge]][license-url]
 
 # Site
+![Spotify angularjs](https://i.imgur.com/B2heenX.png)
 
 # Install dependences
 in ```spotify-angularjs/```
@@ -74,21 +75,21 @@ ng generate component components/shared/navbar --spec=false
 
 # Create component without spec.ts and .css
 ```javascript
-ng g c components/heroes --spec=false -is
+ng g c components/artist --spec=false -is
 ```
 or
 
 ```javascript
-ng generate component components/heroes --spec=false -is
+ng generate component components/artist --spec=false -is
 ```
 
 # Create service without spec.ts
 ```javascript
-ng g s services/heroes --spec=false
+ng g s services/spotify --spec=false
 ```
 or
 ```javascript
-ng generate service services/heroes --spec=false
+ng generate service services/spotify --spec=false
 ```
 
 # Create pipe without spec.ts
