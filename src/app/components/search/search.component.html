@@ -6,4 +6,11 @@
 
 <app-loading *ngIf="loading" class="m-5"></app-loading>
 
-<app-card *ngIf="!loading" [items]="itemsArtist"></app-card>
+<div *ngIf="error" class="alert alert-danger animated fadeIn mt-5">
+    <h3>Error</h3>
+    <p>
+        {{ messageError }}
+    </p>
+</div>
+
+<app-card *ngIf="!loading && !error" [items]="itemsArtist"></app-card>
