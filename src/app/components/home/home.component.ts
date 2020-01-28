@@ -10,7 +10,9 @@ import { Item } from '../../interfaces/album.interface';
 export class HomeComponent implements OnInit {
 
   songs: Item[] = [];
-  loading: boolean;
+  loading: boolean = false;
+  error: boolean = false;
+  messageError: string = '';
 
   constructor(private spotifyService: SpotifyService) {
     this.loading = true;
@@ -19,6 +21,11 @@ export class HomeComponent implements OnInit {
       .subscribe((response: Item[]) => {
         this.songs = response;
         this.loading = false;
+      },
+      err => {
+        this.loading = false;
+        this.error = true;
+        this.messageError = err.error.error.message;
       });
   }
 
